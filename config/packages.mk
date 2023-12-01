@@ -18,6 +18,7 @@ PRODUCT_PACKAGES += \
     DocumentsUI \
     Etar \
     GameSpace \
+    OmniJaws \
     LatinIME \
     Launcher3QuickStep \
     messaging \
