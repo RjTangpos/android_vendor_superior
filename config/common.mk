@@ -59,6 +59,10 @@ ifeq ($(BUILD_WITH_GAPPS),true)
 $(call inherit-product-if-exists, vendor/gms/products/gms.mk)
 endif
 
+# Face Unlock
+ifeq ($(TARGET_SUPPORTS_64_BIT_APPS),true)
+TARGET_SUPPORTS_FACE_UNLOCK ?= true
+
 ifeq ($(TARGET_SUPPORTS_FACE_UNLOCK),true)
 PRODUCT_PACKAGES += \
     FaceUnlock
@@ -68,6 +72,7 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
+endif
 endif
 
 # Include AOSP audio files
